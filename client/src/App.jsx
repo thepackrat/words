@@ -42,12 +42,18 @@ export default function App() {
           onChange={(e) => setWord(sanitize(e.target.value))}
           onKeyDown={handleKeyDown}
           placeholder="Enter a word"
-          style={{ flex: 1, padding: 8, fontSize: 16 }}
+          style={{ flex: 1, padding: '8px 12px', fontSize: 14, border: '1px solid #ccc', borderRadius: 4, outline: 'none' }}
         />
-        <button onClick={addWord} style={{ padding: '8px 16px', fontSize: 16 }}>
+        <button onClick={addWord} style={{
+          padding: '8px 20px', fontSize: 14, fontWeight: 500,
+          background: '#222', color: '#fff', border: 'none', borderRadius: 4, cursor: 'pointer',
+        }}>
           Add
         </button>
-        <button onClick={showWords} style={{ padding: '8px 16px', fontSize: 16 }}>
+        <button onClick={showWords} style={{
+          padding: '8px 20px', fontSize: 14, fontWeight: 500,
+          background: '#fff', color: '#222', border: '1px solid #ccc', borderRadius: 4, cursor: 'pointer',
+        }}>
           Show
         </button>
       </div>
