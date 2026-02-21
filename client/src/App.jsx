@@ -14,6 +14,7 @@ export default function App() {
     if (!clean) return;
     await axios.post('/api/words', { text: clean });
     setWord('');
+    showWords();
   }
 
   async function showWords() {
