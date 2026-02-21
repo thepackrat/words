@@ -11,11 +11,15 @@ app.use(express.json());
 
 app.post('/api/words', async (req, res) => {
   const { text } = req.body;
-  if (!text || typeof text !== 'string' || text.trim().length === 0) {
+  if (!text || typeof text !== 'string') {
     return res.status(400).json({ error: 'Word is required' });
   }
+  const clean = text.trim().replace(/[^a-zA-Z0-9-]/g, '');
+  if (clean.length === 0) {
+    return res.status(400).json({ error: 'Word must contain only letters, numbers, or hyphens' });
+  }
   const word = await prisma.word.create({
-    data: { text: text.trim() },
+    data: { text: clean },
   });
   res.status(201).json(word);
 });
