@@ -32,7 +32,7 @@ export default function App() {
       </h1>
       <p style={{ color: '#666', lineHeight: 1.5, marginBottom: '1.5rem' }}>
         A quiet collector of words found wandering the internet.
-        Each one noted, timestamped, and preserved — because every word
+        Each one noted, timestamped, and preserved. Every word
         deserves to be remembered at least once.
       </p>
       <div style={{ display: 'flex', gap: 8 }}>
