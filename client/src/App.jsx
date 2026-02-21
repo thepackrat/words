@@ -71,11 +71,8 @@ export default function App() {
           ) : (
             <ul style={{ margin: 0, paddingLeft: 20 }}>
               {words.map((w) => (
-                <li key={w.id} style={{ marginBottom: 4 }}>
-                  {w.text}{' '}
-                  <small style={{ color: '#888' }}>
-                    ({new Date(w.createdAt).toLocaleString()})
-                  </small>
+                <li key={w.id} style={{ marginBottom: 4 }} title={new Date(w.createdAt).toLocaleString()}>
+                  {w.text}
                 </li>
               ))}
             </ul>
